@@ -18,6 +18,9 @@ if (!fs.existsSync('data.json')) {
 	return;
 }
 
+if (!String.prototype.padStart)
+	String.prototype.padStart = require('./lib/padStart.js');
+
 const system = require('./lib/system.js');
 if (!chalk.supportsColor) ok = unknown = () => '';
 if (!system && !fs.existsSync('system')) fs.mkdirSync('system');
