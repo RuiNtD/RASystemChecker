@@ -1,0 +1,16 @@
+{
+  "name": "rasystemchecker",
+  "version": "1.0.0",
+  "description": "This tool will help verify and sort through BIOS files used by RetroArch.",
+  "main": "index.js",
+  "author": "Fayne Aldan",
+  "repository": "FayneAldan/RASystemChecker",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "cli-command-parser": "^1.0.3",
+    "crc": "^3.4.4",
+    "glob": "^7.1.2",
+    "hasha": "^3.0.0"
+  }
+}
