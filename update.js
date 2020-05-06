@@ -1,7 +1,7 @@
 const https = require('https');
 const fs = require('fs');
 const cp = require('cli-command-parser');
-const url = 'https://raw.githubusercontent.com/libretro/libretro-database/master/dat/BIOS.dat';
+const url = 'https://raw.githubusercontent.com/libretro/libretro-database/master/dat/System.dat';
 
 (new Promise((resolve, reject) => {
 	https.get(url, res => {
