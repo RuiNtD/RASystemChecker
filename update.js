@@ -24,12 +24,11 @@ const url = 'https://raw.githubusercontent.com/libretro/libretro-database/master
 	let out = {};
 	let name = "";
 	for (v of bios) {
-		if (v.startsWith('\tname ')) {
-			name = v.substring(7, v.length-1);
-			if (!out[name]) out[name] = [];
-		} else if (v.startsWith('\tcomment '))
-			out[name].push(v.substring(10, v.length-1));
-		else if (v.startsWith('\trom ')) {
+		if (v.startsWith('\tcomment ')) {
+			name = v.substring(10, v.length-1);
+			if (!out[name] && name != 'System')
+				out[name] = [];
+        } else if (v.startsWith('\trom ')) {
 			var obj = {};
 			v = cp(v.substring(7, v.length-2));
 			for (let i = 0; i < v.length; i += 2)
