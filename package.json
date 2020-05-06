@@ -9,7 +9,7 @@
   "dependencies": {
     "chalk": "^4.0.0",
     "cli-command-parser": "^1.0.3",
-    "crc": "^3.4.4",
+    "crc": "^3.8.0",
     "glob": "^7.1.2",
     "hasha": "^3.0.0"
   }
