@@ -8,9 +8,9 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.0.0",
-    "cli-command-parser": "^1.0.3",
     "crc": "^3.4.4",
     "glob": "^7.1.2",
-    "hasha": "^3.0.0"
+    "hasha": "^3.0.0",
+    "robloach-datfile": "^2.2.0"
   }
 }
