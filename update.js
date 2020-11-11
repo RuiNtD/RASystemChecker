@@ -25,7 +25,6 @@ new Promise((resolve, reject) => {
     });
 })
   .then(async (data) => {
-    data = data.substring(data.indexOf("game ("));
     data = data.replace(/.* "System"$/gm, "");
     data = data.replace(/^\tcomment /gm, ")\ngame (\n\tname ");
     return data;
@@ -36,7 +35,7 @@ new Promise((resolve, reject) => {
     input.push(null);
     return input;
   })
-  .then((data) => datfile.parse(data))
+  .then((data) => datfile.parse(data, { ignoreHeader: true }))
   .then((data) =>
     util.promisify(fs.writeFile)("data.json", JSON.stringify(data))
   )
