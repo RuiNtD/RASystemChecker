@@ -1,6 +1,8 @@
 .vs
-drop
 node_modules
+
 system
+drop
+
+System.dat
 data.json
-system.txt

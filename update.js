@@ -25,17 +25,18 @@ new Promise((resolve, reject) => {
     });
 })
   .then(async (data) => {
-    data = data.replace(/.* "System"$/gm, "");
-    data = data.replace(/^\tcomment /gm, ")\ngame (\n\tname ");
-    return data;
+    const gameAt = data.indexOf("game (");
+    return (
+      data.substring(0, gameAt) +
+      data
+        .substring(gameAt)
+        .replace(/.* "System"$\n/gm, "")
+        .replace(/\n^\tcomment/gm, ")\n\ngame (\n\tname")
+        .replace(/^game \(\s+\)\s+/gm, "")
+    );
   })
-  .then(async (data) => {
-    const input = new stream.Readable();
-    input.push(data);
-    input.push(null);
-    return input;
-  })
-  .then((data) => datfile.parse(data, { ignoreHeader: true }))
+  .then((data) => util.promisify(fs.writeFile)("System.dat", data))
+  .then((data) => datfile.parseFile("System.dat", { ignoreHeader: true }))
   .then((data) =>
     util.promisify(fs.writeFile)("data.json", JSON.stringify(data))
   )
