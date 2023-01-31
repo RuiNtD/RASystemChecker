@@ -8,7 +8,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
-    "crc": "^3.8.0",
+    "crc": "^4.3.2",
     "glob": "^7.1.6",
     "hasha": "^5.2.2",
     "robloach-datfile": "^2.3.0"
